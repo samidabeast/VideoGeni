@@ -19,10 +19,11 @@ and execute (java).
 The Python code is first, and the equivalent Java code follows. This will be 
 the pattern for each example.
 
+#### Python
 ```python
 print ('Hello, World!')
 ```
-
+#### Java
 ```java
 public class Hello
 {
@@ -42,6 +43,7 @@ is used for human readability, in Python the interpretter actually reads the
 indentation and determines blocks of code based on this. Basically, an indent
 functions as a curly brace in Java.
 
+#### Python
 ```python
 for x in range(1, 6):
     print(x)
@@ -54,7 +56,7 @@ while x<6:
     print(x)
     x += 1
 ```
-
+#### Java
 ```java
 for(int x=1; x<6; x++)
     System.out.println(x);
@@ -66,11 +68,12 @@ while(x<6)
 ```
 
 
-
+#### Python
 ```python
 
 ```
 
+#### Java
 ```java
 
 ```
