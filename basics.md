@@ -13,7 +13,7 @@ Python broke backwards compatibility going from 2 to 3, so an older version
 ## Hello World
 
 Way shorter in Python. Also note, Python is an interpreted language, so
-you just need to say "python file.py" instead of the seperate compile (javac),
+you just need to say "python file.py" instead of the separate compile (javac),
 and execute (java).
 
 #### Python
@@ -39,7 +39,7 @@ generally don't have to worry about it, since the obvious
 casts will be done for you.
 
 Python is dynamically-typed so you don't really have to declare
-a variable. If there is a statment such as ``` x = 5 ``` 
+a variable. If there is a statement such as ``` x = 5 ``` 
 Python will look up the variable. If it can't find it, it assumes
 you want to new declare a new one. This is good to keep in mind
 when you are debugging.
@@ -58,8 +58,8 @@ x /= 2;
 
 ## Looping/Indentation
 
-Python uses indentation to mark off blocks of code. While normally indentaion
-is used for human readability, in Python the interpretter actually reads the
+Python uses indentation to mark off blocks of code. While normally indentation
+is used for human readability, in Python the interpreter actually reads the
 indentation and determines blocks of code based on this. Basically, an indent
 functions as a curly brace in Java. Also, notice the colon marking
 the end of the conditional expression.
@@ -70,7 +70,7 @@ for x in range(1, 6):
     print(x)
 
 # Of course you can always do a while loop
-# By the way, hashtag is how you comment in Python
+# By the way, hash-tag is how you comment in Python
 
 x = 1
 while x<6:
@@ -97,14 +97,13 @@ structure, an iterable to be exact, like Javas for(a : a[]) thingy
 ## Classes 
 
 A basic class in Python is similar enough to one in Java. The
-major differeances are:
-* Fields must always be refered to as self.field.
+major differences are:
+* Fields must always be referred to as self.field.
 * All methods take self as their first argument.
-* The constructor's name is __init__(self, arg0, arg1)
+* The constructor's name is \_\_init\_\_(self, arg0, arg1)
 * Because of dynamic typing, you don't have a section declaring
-fields. You normally just have methods in a class. (Not true you
-still have to declare everything that you want to have an initial
-value)
+fields, unless you want that variable to have an initial value
+before the constructor.
 
 #### Python
 ```python
@@ -157,3 +156,13 @@ public class Test
 ### Inheritance
 
 ### Static Variables (just leaving off the self)
+
+
+### Import
+```python
+import sys
+pgm_name = sys.argv[0]
+p = int(sys.argv[1])
+```
+
+###Chained comparisons
