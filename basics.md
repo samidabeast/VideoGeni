@@ -4,7 +4,7 @@ I'm just going to put some of the major syntactical differences
 between the two languages. I will also include a section showing off the 
 things you can do in python which would not be easy in Java. 
 
-** Important ** You will need to download Python 3.4 if you don't already
+__Important__ You will need to download Python 3.4 if you don't already
  have it. 
 
 Python broke backwards compatibility going from 2 to 3, so an older version
@@ -100,7 +100,8 @@ A basic class in Python is similar enough to one in Java. The
 major differences are:
 * Fields must always be referred to as self.field.
 * All methods take self as their first argument.
-* The constructor's name is \_\_init\_\_(self, arg0, arg1)
+* The constructor's name is __init__(self, arg0, arg1)
+* __init__ and other special methods have 2 underscores on each side of their name.
 * Because of dynamic typing, you don't have a section declaring
 fields, unless you want that variable to have an initial value
 before the constructor.
@@ -153,16 +154,112 @@ public class Test
 }
 ```
 
-### Inheritance
+### Inheritance and Static Variables
+* Just put the parent class in parenthesis.
+* Multiple inheritance is allowed.
+* You can declare a static variable simply by
+leaving off the self. prefix and using it outside of any methods.
+* Note that there's both a static and instance variable named count.
+* __str__ is another special method in Python. It is equivalent to the 
+toString in Java.
 
-### Static Variables (just leaving off the self)
+```python
+class Pet:
+
+    count = 0  # static
+
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+        Pet.count += 1 
+        self.count = Pet.count
+
+    def __str__(self):
+        return "%s is a %s, and is the %d pet created" % (self.name, self.species, self.count)
+
+class Dog(Pet):
+    def __init__(self, name):
+        Pet.__init__(self, name, "dog")
+
+fido = Dog("Fido")
+ed = Pet("Ed", "horse")
+
+print(fido)
+print(ed)
+```
+```java
+public class Pet
+{
+    static int count = 0;
+
+    public String name;
+    public String species;
+    public int id;
+
+    public Pet(String name, String species)
+    {
+	this.name = name;
+	this.species = species;
+	id = count += 1;
+    }
+
+    public String toString()
+    {
+	return name + " is a " + species + ", and is the " +
+	    id + " pet created";
+    }
+}
+```
+```java
+public class Dog extends Pet
+{
+    public Dog(String name)
+    {
+	super(name, "dog");
+    }
+}
+```
+```java
+public class Test
+{
+    public static void main(String[] args)
+    {
+	Dog fido = new Dog("Fido");
+	Pet ed = new Pet("Ed", "horse");
+	System.out.println(fido);	
+	System.out.println(ed);	
+    }
+}
+```
+
+
 
 
 ### Import
+###Chained comparisons
+
+Checck if argument # is between yadda and dadda
+
 ```python
 import sys
 pgm_name = sys.argv[0]
 p = int(sys.argv[1])
 ```
 
-###Chained comparisons
+Tuples - multiple return values
+
+### Functions as variables, lambdas
+
+```python
+def forEach(lzt, fn):
+    new_lzt = [] # empty list
+    for item in lzt:
+        new_lzt.append(fn(item))
+    return new_lzt
+
+def increment(x):
+    return x+1
+
+print(forEach(range(5), increment))
+print(forEach(range(5), lambda x: x**2))
+```
