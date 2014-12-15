@@ -237,13 +237,28 @@ public class Test
 
 ### Import
 ###Chained comparisons
-
-Checck if argument # is between yadda and dadda
+###Program Arguments
 
 ```python
 import sys
-pgm_name = sys.argv[0]
-p = int(sys.argv[1])
+
+if 1 < len(sys.argv) < 4:
+    pass
+else:
+    print("ERROR: Invalid number of arguments.")
+```
+```java
+public class Test
+{
+    public static void main(String[] args)
+    {
+
+	if (args.length > 0 && args.length < 3)
+	    ;
+	else
+	    System.out.println("ERROR: Invalid number of arguments.");
+    }
+}
 ```
 
 Tuples - multiple return values
