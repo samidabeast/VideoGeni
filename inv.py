@@ -10,8 +10,17 @@ import scipy.misc
 import matplotlib.pyplot as plot
 
 inFile = sys.argv[1]
-pos = inFile.index('/')+1
-outFile = inFile[:pos]+'i'+inFile[pos:]
+done = False
+pos = 0
+
+while not done:
+    try:
+        pos += inFile[pos:].index('/')+1
+    except (ValueError):
+        done = True
+
+
+outFile = inFile[:pos]+'b'+inFile[pos:]
 print(outFile)
 
 img = scipy.misc.imread(inFile)
@@ -19,20 +28,22 @@ img = scipy.misc.imread(inFile)
 print(img.shape, img.dtype)
 
 def contrast(x):
-    y = 127 - x
-    if not abs(y) > 60:
-        x -= y
+    y =  x - 127
+    if abs(y) < 60:
+        x += y
     return x
 
 def strange(x):
-    b = 127-x
-    if b < 0:
-        return -b
+    b = x-127
+    if b > 0:
+        return b
     else:
-        return 255-b
-    
+        return 255+b
 
-fn = scipy.vectorize(strange)
+# fn = scipy.vectorize(strange)
 
-scipy.misc.imsave(outFile, fn(img))
+# scipy.misc.imsave(outFile, fn(img))
+
+scipy.misc.imsave(outFile, 255-img)
+
 
