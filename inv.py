@@ -18,10 +18,21 @@ img = scipy.misc.imread(inFile)
 
 print(img.shape, img.dtype)
 
-for x in scipy.nditer(img, op_flags=['readwrite']):
-    x[...] = 255 - x
-#img *= -1
-#img += 255
+def contrast(x):
+    y = 127 - x
+    if not abs(y) > 60:
+        x -= y
+    return x
 
-scipy.misc.imsave(outFile, img)
+def strange(x):
+    b = 127-x
+    if b < 0:
+        return -b
+    else:
+        return 255-b
+    
+
+fn = scipy.vectorize(strange)
+
+scipy.misc.imsave(outFile, fn(img))
 
