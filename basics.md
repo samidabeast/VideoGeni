@@ -1,20 +1,19 @@
 # Python for Java Programmers
 
 I'm just going to put some of the major syntactical differences
-between the two languages. I will also include a section showing off the 
-things you can do in python which would not be easy in Java. 
+between the two languages. Most examples will have equivalent code for 
+Python and Java, but some Java examples are left off because
+they are not nearly as easy to do in that language.
 
 __Important__ You will need to download Python 3.4 if you don't already
  have it. 
 
-Python broke backwards compatibility going from 2 to 3, so an older version
- will not work.
-
-## Hello World
-
-Way shorter in Python. Also note, Python is an interpreted language, so
+__Also note__ Python is an interpreted language, so
 you just need to say "python file.py" instead of the separate compile (javac),
 and execute (java).
+
+## Hello World
+Way shorter in Python.
 
 #### Python
 ```python
@@ -34,9 +33,8 @@ public class Hello
 ##Variables
 
 When declaring a new variable in Python, you do not have to specify
-a type. It will have a type underneath it all but you
-generally don't have to worry about it, since the obvious
-casts will be done for you.
+a type. It will have a type behind the scenes, but this type can change, so you
+rarely have to cast variables, as it is done for you.
 
 Python is dynamically-typed so you don't really have to declare
 a variable. If there is a statement such as ``` x = 5 ``` 
@@ -58,8 +56,8 @@ x /= 2;
 
 ## Looping/Indentation
 
-Python uses indentation to mark off blocks of code. While normally indentation
-is used for human readability, in Python the interpreter actually reads the
+ While normally indentation is solely used for human readability,
+ in Python the interpreter actually reads the
 indentation and determines blocks of code based on this. Basically, an indent
 functions as a curly brace in Java. Also, notice the colon marking
 the end of the conditional expression.
@@ -261,12 +259,36 @@ public class Test
 }
 ```
 
-Tuples - multiple return values
-
-### Functions as variables, lambdas
+### Tuples
+A tuple is like a list, but you cannot modify its contents once created. It
+is just to package some things together so you can move them around easier.
+Tuples let you return multiple values from a function easily. You can also
+unpack a tuple and give its contents to a function as parameters.
 
 ```python
-def forEach(lzt, fn):
+def funk():
+    return(2,3)
+
+def add(a,b):
+    return a+b
+
+x = funk() # x is a tuple
+
+print(add(*x)) # prints 5
+print(add(x[0],x[1])) # prints 5
+```
+
+### Functions as variables
+### Lambdas
+
+Functions are just another type of variable in Python. This means that you
+can pass them to other functions as arguments, and that you can also return
+them. A lambda is an anonymous function, one without name. If you are
+simply using the function as a parameter, using a lambda is easier than
+defining a function the normal way.
+```python
+def forEach(lzt, fn): 
+#calls fn on each element in lzt, builds a new list of results
     new_lzt = [] # empty list
     for item in lzt:
         new_lzt.append(fn(item))
@@ -275,6 +297,6 @@ def forEach(lzt, fn):
 def increment(x):
     return x+1
 
-print(forEach(range(5), increment))
-print(forEach(range(5), lambda x: x**2))
+print(forEach(range(5), increment)) # [1, 2, 3, 4, 5]
+print(forEach(range(5), lambda x: x**2)) # [0, 1, 4, 9, 16]
 ```

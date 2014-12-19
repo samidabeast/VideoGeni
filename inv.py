@@ -75,8 +75,8 @@ def contrast_factory(fn, a, b, xam):
 
 #fn = scipy.vectorize(contrast_factory(log, 0.1, 1, 255)) #brightens
 #fn = scipy.vectorize(contrast_factory(cos, pi, 4*pi, 255)) #crazy waves
-#fn = scipy.vectorize(contrast_factory(atan, -pi/2, pi/2, 255)) #contrast
-fn = scipy.vectorize(contrast_factory(lambda x: log(1+x%15), 0, 44, 255)) #dunno
+fn = scipy.vectorize(contrast_factory(atan, -pi*8, pi*8, 255)) #contrast
+#fn = scipy.vectorize(contrast_factory(lambda x: log(1+x%15), 0, 44, 255)) #dunno
 
 scipy.misc.imsave(outFile, fn(img))
 
