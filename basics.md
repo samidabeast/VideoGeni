@@ -12,7 +12,20 @@ __Also note__ Python is an interpreted language, so
 you just need to say "python file.py" instead of the separate compile (javac),
 and execute (java).
 
-## Hello World
+[Hello World](#Hello World)
+[Variables](#Variables)
+[Looping/Indentation](#Looping/Indentation)
+[Classes ](#Classes )
+[Inheritance and Static Variables](#Inheritance and Static Variables)
+[Import](#Import)
+[Chained comparisons](#Chained comparisons)
+[Program Arguments](#Program Arguments)
+[Tuples](#Tuples)
+[Functions as variables](#Functions as variables)
+[Lambdas](#Lambdas)
+
+
+## Hello World <a name="Hello World"></a>
 Way shorter in Python.
 
 #### Python
@@ -30,7 +43,7 @@ public class Hello
 }
 ```
 
-##Variables
+## Variables <a name="Variables"></a>
 
 When declaring a new variable in Python, you do not have to specify
 a type. It will have a type behind the scenes, but this type can change, so you
@@ -54,7 +67,7 @@ double x = 5; //would need a cast if declared as an int
 x /= 2;
 ```
 
-## Looping/Indentation
+## Looping/Indentation <a name="Looping/Indentation"></a>
 
  While normally indentation is solely used for human readability,
  in Python the interpreter actually reads the
@@ -92,7 +105,7 @@ of numbers from the first argument (inclusive) to the second
 structure, an iterable to be exact, like Javas ``` for(i : array[]) ```loop.
 
 
-## Classes 
+## Classes  <a name="Classes "></a>
 
 A basic class in Python is similar enough to one in Java. The
 major differences are:
@@ -152,7 +165,7 @@ public class Test
 }
 ```
 
-### Inheritance and Static Variables
+## Inheritance and Static Variables <a name="Inheritance and Static Variables"></a>
 * Just put the parent class in parenthesis.
 * Multiple inheritance is allowed.
 * You can declare a static variable simply by
@@ -234,9 +247,9 @@ public class Test
 }
 ```
 
-### Import
-###Chained comparisons
-###Program Arguments
+## Import <a name="Import"></a>
+## Chained comparisons <a name="Chained comparisons"></a>
+## Program Arguments <a name="Program Arguments"></a>
 
 #### Python
 ```python
@@ -262,7 +275,7 @@ public class Test
 }
 ```
 
-### Tuples
+## Tuples <a name="Tuples"></a>
 A tuple is like a list, but you cannot modify its contents once created. It
 is just to package some things together so you can move them around easier.
 Tuples let you return multiple values from a function easily. You can also
@@ -282,8 +295,8 @@ print(add(*x)) # prints 5
 print(add(x[0],x[1])) # prints 5
 ```
 
-### Functions as variables
-### Lambdas
+## Functions as variables <a name="Functions as variables"></a>
+## Lambdas <a name="Lambdas"></a>
 
 Functions are just another type of variable in Python. This means that you
 can pass them to other functions as arguments, and that you can also return
