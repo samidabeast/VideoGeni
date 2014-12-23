@@ -12,17 +12,29 @@ __Also note__ Python is an interpreted language, so
 you just need to say "python file.py" instead of the separate compile (javac),
 and execute (java).
 
+
 [Hello World](#Hello World)
+
 [Variables](#Variables)
+
 [Looping/Indentation](#Looping/Indentation)
+
 [Classes ](#Classes )
+
 [Inheritance and Static Variables](#Inheritance and Static Variables)
+
 [Import](#Import)
+
 [Chained comparisons](#Chained comparisons)
+
 [Program Arguments](#Program Arguments)
+
 [Tuples](#Tuples)
+
 [Functions as variables](#Functions as variables)
+
 [Lambdas](#Lambdas)
+
 
 
 ## Hello World <a name="Hello World"></a>

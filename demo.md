@@ -8,7 +8,7 @@ since Mint is based on it.
 
 [I got most of this from the tutorial here](http://scipy-lectures.github.io/advanced/image_processing/#opening-and-writing-to-image-files)
 
-This code is available in [demo.py](demo.py). If we all can get this to work, we'll at
+This code is also available in [demo.py](demo.py). If we all can get this to work, we'll at
 least have things to set-up to think about the algorithm.
 
 The Python Imaging Library (which is included in scipy once you have downloaded
