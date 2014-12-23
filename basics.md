@@ -89,7 +89,7 @@ while(x<6)
 This example also uses Python's range function. It creates a list
 of numbers from the first argument (inclusive) to the second 
 (exclusive). Python's for loop always uses a list or similar 
-structure, an iterable to be exact, like Javas for(a : a[]) thingy
+structure, an iterable to be exact, like Javas ``` for(i : array[]) ```loop.
 
 
 ## Classes 
@@ -100,9 +100,9 @@ major differences are:
 * All methods take self as their first argument.
 * The constructor's name is __init__(self, arg0, arg1)
 * __init__ and other special methods have 2 underscores on each side of their name.
-* Because of dynamic typing, you don't have a section declaring
+* You don't have to have a section declaring
 fields, unless you want that variable to have an initial value
-before the constructor.
+__before__ the constructor.
 
 #### Python
 ```python
@@ -175,7 +175,7 @@ class Pet:
     def __str__(self):
         return "%s is a %s, and is the %d pet created" % (self.name, self.species, self.count)
 
-class Dog(Pet):
+class Dog(Pet):  # Dog inherits from Pet
     def __init__(self, name):
         Pet.__init__(self, name, "dog")
 
@@ -229,9 +229,6 @@ public class Test
     }
 }
 ```
-
-
-
 
 ### Import
 ###Chained comparisons
