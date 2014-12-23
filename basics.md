@@ -161,6 +161,7 @@ leaving off the self. prefix and using it outside of any methods.
 * __str__ is another special method in Python. It is equivalent to the 
 toString in Java.
 
+#### Python
 ```python
 class Pet:
 
@@ -185,6 +186,7 @@ ed = Pet("Ed", "horse")
 print(fido)
 print(ed)
 ```
+#### Java
 ```java
 public class Pet
 {
@@ -208,6 +210,7 @@ public class Pet
     }
 }
 ```
+#### Java
 ```java
 public class Dog extends Pet
 {
@@ -217,6 +220,7 @@ public class Dog extends Pet
     }
 }
 ```
+#### Java
 ```java
 public class Test
 {
@@ -234,6 +238,7 @@ public class Test
 ###Chained comparisons
 ###Program Arguments
 
+#### Python
 ```python
 import sys
 
@@ -242,6 +247,7 @@ if 1 < len(sys.argv) < 4:
 else:
     print("ERROR: Invalid number of arguments.")
 ```
+#### Java
 ```java
 public class Test
 {
@@ -262,6 +268,7 @@ is just to package some things together so you can move them around easier.
 Tuples let you return multiple values from a function easily. You can also
 unpack a tuple and give its contents to a function as parameters.
 
+#### Python
 ```python
 def funk():
     return(2,3)
@@ -283,6 +290,7 @@ can pass them to other functions as arguments, and that you can also return
 them. A lambda is an anonymous function, one without name. If you are
 simply using the function as a parameter, using a lambda is easier than
 defining a function the normal way.
+#### Python
 ```python
 def forEach(lzt, fn): 
 #calls fn on each element in lzt, builds a new list of results
