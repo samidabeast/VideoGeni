@@ -19,7 +19,7 @@ and execute (java).
 
 [Looping/Indentation](#Looping/Indentation)
 
-[Classes ](#Classes )
+[Classes ](#Classes)
 
 [Inheritance and Static Variables](#Inheritance and Static Variables)
 
