@@ -19,7 +19,7 @@ and execute (java).
 
 [Looping/Indentation](#Looping/Indentation)
 
-[Classes ](#Classes)
+[Classes](#Classes)
 
 [Inheritance and Static Variables](#Inheritance and Static Variables)
 
@@ -117,7 +117,7 @@ of numbers from the first argument (inclusive) to the second
 structure, an iterable to be exact, like Javas ``` for(i : array[]) ```loop.
 
 
-## Classes  <a name="Classes "></a>
+## Classes  <a name="Classes"></a>
 
 A basic class in Python is similar enough to one in Java. The
 major differences are:
