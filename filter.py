@@ -49,14 +49,11 @@ contrast = filter_factory("con_", stretch(atan, -pi/2, pi/2, 255))
 inverse = filter_factory("inv_", lambda x: 255-x)
 tan = filter_factory("tan_", stretch(tan, -5*pi/11, 5*pi/11, 255))
 
-
-terms = magic(2, 1, 1, 3)
-
-#brighten(img)
-#waves(img)
-#contrast(img)
-#inverse(img)
-#crazy(img)
+brighten(img)
+waves(img)
+contrast(img)
+inverse(img)
+crazy(img)
 tan(img)
 
 #seq = range(255)
