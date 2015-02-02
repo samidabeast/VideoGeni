@@ -35,6 +35,11 @@ print(img.shape, img.dtype)
  
 #   print (x.size)
 
+if r>g>b:
+    return[r,g,b]
+else:
+    return[0,0,0]
+
 img2 = img
 plot.imshow(img)
 plot.show()

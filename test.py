@@ -30,12 +30,31 @@ except (FileNotFoundError):
     err("The file "+inFile+" could not be found")
 
 print(img.shape, img.dtype)
+"""
+m = scipy.array_split(img,3)
 
-z = scipy.array([0,1,0], dtype=img.dtype)
-
+def fn(r,g,b):
+    if r>g>b:
+        return scipy.array([r,g,b], dtype=img.dtype)
+    else:
+        return scipy.array([0,0,0], dtype=img.dtype)
+ 
+plot.imshow(img)
+plot.show()
+fnct = scipy.vectorize(fn)
+img = fnct(m[0],m[1],m[2])
+"""
 plot.imshow(img)
 plot.show()
 
-plot.imshow(img*z)
+for i in img:
+    for j in i:
+#        if not (j[0]>j[1]>j[2]):
+        if j[0]<150:# and 
+            j[0]=0
+            j[1]=0
+            j[2]=0
+
+plot.imshow(img)
 plot.show()
 
