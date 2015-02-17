@@ -22,13 +22,12 @@ print(img.shape, img.dtype)
 plot.imshow(img)
 plot.show()
 
-for i in img:
-    for j in i:
-        if j[0]<150:
-            j[0]=0
-            j[1]=0
-            j[2]=0
+#could probably use a boolean bitmap here
 
-plot.imshow(img)
+funk = scipy.vectorize(lambda r,g,b: 1 if r > 150 else 0, otypes=[scipy.uint8])
+
+mat = funk(img[...,0], img[...,1], img[...,2])
+print(mat.shape, mat.dtype)
+
+plot.imshow(img*mat[...,scipy.newaxis])
 plot.show()
-
