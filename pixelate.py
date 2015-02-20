@@ -23,7 +23,7 @@ crange = [query(RMAX,RMIN), query(GMAX,GMIN), query(BMAX,BMIN)]
 #determine size of each block
 #should this be based on size of image?
 
-d = 25
+d = 16
 
 def block(box): 
     """Analyze block with center at (x,y)"""
@@ -87,11 +87,7 @@ def isFire(img):
         avg = block(box)
         box[:] = avg[None,None,:] #sets box to average color
 
-        if inColorRange(avg):
-            plot.imshow(box)
-            plot.show()
-            return True
-        else:
+        if True:
             if i==0:
                 i = c//2 + 1
                 c+=1
@@ -118,3 +114,4 @@ plot.imshow(im)
 plot.show()
 
 # numpy.empty_like (b)
+pil.imsave("yadda.jpg", im)

@@ -12,12 +12,12 @@ import matplotlib.pyplot as plot
 #Edit these!
 
 RMAX = 255
-RMIN = 200
+RMIN = 140
 
-GMAX = 255
-GMIN = 0
+GMAX = 140
+GMIN = 30
 
-BMAX = 70
+BMAX = 80
 BMIN = 0
 
 def query(mx, mn):
@@ -63,4 +63,3 @@ pil.imsave("yadda.jpg", img)
 #Uncomment these to simply view the image (you can do both if you want)
 plot.imshow(img)
 plot.show()
-
