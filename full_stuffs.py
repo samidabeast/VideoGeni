@@ -1,4 +1,4 @@
-import sys
+import sys                      
 import scipy as sp
 import scipy.misc as pil
 import matplotlib.pyplot as plot
@@ -11,6 +11,8 @@ RMIN = 140
 
 GMAX = 140
 GMIN = 30
+
+#green*3 >= red
 
 BMAX = 80
 BMIN = 0
@@ -48,8 +50,10 @@ def isFire(img):
 #  Find middle of image (initial block center)
     xmax = im.shape[0]
     ymax = im.shape[1]
-    x = xmax/2
-    y = ymax/2
+    x = xmax//2
+    y = ymax//2
+
+    fedex = sp.array([],dtype='uint8')
 
     c = 0 #count, how many i's are there? 
     i = 0 #iteration, which i are we on? 
@@ -85,7 +89,7 @@ def isFire(img):
 
         box = im[x:xd, y:yd, :]
         avg = block(box)
-        box[:] = avg[None,None,:] #sets box to average color
+        box[:] = avg[None,None,:] #sets box to average color #sp.newaxis
 
         if inColorRange(avg):
             plot.imshow(box)
@@ -118,3 +122,14 @@ plot.imshow(im)
 plot.show()
 
 # numpy.empty_like (b)
+
+#how to make shapes with pixelated data...
+#color range needs to be fixed
+#slope>1
+#instead of returning True, add it to an array (index array)
+#read page on numpy advanced indexing  
+#paging sytem: for example 50 chunks per array
+
+
+
+
